@@ -293,7 +293,7 @@ function renderReviewHub() {
     const pending = getOrders().filter(order => !order.reviewed);
     actions.innerHTML = pending.length
       ? `<p class="muted">Đơn hàng có thể đánh giá</p>` + pending.map(order => `<div class="row pending-review"><div><strong>${esc(order.id)}</strong><small>${esc(new Date(order.createdAt).toLocaleDateString('vi-VN'))} · ${money(order.total)}</small></div><button data-review-order="${esc(order.id)}">Đánh giá bằng video</button></div>`).join('')
-      : '<p class="muted">Sau khi hoàn tất đơn hàng demo, bạn có thể quay lại đây để gửi video đánh giá.</p>';
+      : '<p class="muted">Sau khi hoàn tất đơn hàng, bạn có thể quay lại đây để gửi video đánh giá.</p>';
   }
   renderReviewList();
 }
